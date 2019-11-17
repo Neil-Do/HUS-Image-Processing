@@ -57,3 +57,11 @@ imshow(B)
 # Cau 3
 K = ChromaKeying(I);
 imshow(K);
+
+%{
+subplot(1, 2, 1);
+imshow(I);
+subplot(1, 2, 2);
+imshow(K);
+%}
+# Het Cau 3
