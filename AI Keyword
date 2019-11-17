@@ -3,3 +3,39 @@ structural risk minimization principle (SRM)
 unshared convolution
 Tiled convolution
 knowledge base
+machine learning: "AI systems need the ability to acquire their own knowledge, by extracting patterns from raw data. This capability is known as machine learning"
+logistic regression
+naive Bayes
+representation of the data
+representation learning
+autoencoder
+factors of variation
+sampling
+Wald test
+likelihood ratio test
+statistical test
+local binary patterns
+local ternary patterns
+Allograph-base
+receptive field
+Spatial arrangement
+depth
+stride
+zero-padding
+Parameter Sharing
+Dilated Convolution
+no-op
+Data Augmentation
+Transfer Learning
+object detection
+object segmentation
+image classification
+object localization
+Network in Network Layers
+Dropout Layers
+Pooling Layers
+ReLU layers
+vanishing gradient problem
+
+
+Amdahl’s Law
