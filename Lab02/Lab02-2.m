@@ -46,22 +46,23 @@ imshow(I);
 # Cau 2-2
 %{
 
+
+%}
 I_reshape = reshape(I, Ir * Ic, 3);
 hist_I = zeros(256, 3);
 
 for i = 1:256
-  hist_I(i, :) = sum(I_reshape == (i - 1));
+hist_I(i, :) = sum(I_reshape == (i - 1));
 endfor
 plot(hist_I);
-
-%}
 # Het Cau 2-2
 
 
 
-
-# Cau 2-3
-K = CombineImages(I, J_resize);
-imwrite(K, "Result/CombineImage.png");
-imshow(K);
-# Het Cau 2-3
+%{
+  # Cau 2-3
+  K = CombineImages(I, J_resize);
+  imwrite(K, "Result/CombineImage.png");
+  imshow(K);
+  # Het Cau 2-3
+%}

@@ -1,5 +1,6 @@
 pkg load image
 
+
 # Ham Cau 3
 function retval = ChromaKeying(I)
   data = dlmread("data.txt");
@@ -35,33 +36,34 @@ I = imread("lion.jpg");
 J = imread("lionHSV.jpg");
 
 %{
-subplot(1, 2, 1);
-imshow(I);
-subplot(1, 2, 2);
-imshow(J);
+  subplot(1, 2, 1);
+  imshow(I);
+  subplot(1, 2, 2);
+  imshow(J);
 %}
 # Het Cau 1
 
 # Cau 2
 %{
-Jh = J(:, :, 1);
-Js = J(:, :, 2);
-Jv = J(:, :, 3);
+  Jh = J(:, :, 1);
+  Js = J(:, :, 2);
+  Jv = J(:, :, 3);
 
-Jh_double = im2double(Jh)
-B = (Jh_double > 0.22 & Jh_double < 0.45)
-imshow(B)
+  Jh_double = im2double(Jh);
+  B = (Jh_double > 0.22 & Jh_double < 0.45);
+  imwrite(B, "Result/BinaryImage.png");
+  #imshow(B)
 %}
 # Het Cau 2
 
 # Cau 3
 K = ChromaKeying(I);
-imshow(K);
+#imshow(K);
 
 %{
+%}
 subplot(1, 2, 1);
 imshow(I);
 subplot(1, 2, 2);
 imshow(K);
-%}
 # Het Cau 3
