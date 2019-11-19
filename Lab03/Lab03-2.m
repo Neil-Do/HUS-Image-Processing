@@ -18,6 +18,6 @@ G = imread("noiseSP.png");
 
 # Cau 2
 N = I + G;
-imwrite(N, "Results/N.png");
+imwrite(N, "Results/AddNoise.png");
 imshow(N);
 # Het Cau 2
