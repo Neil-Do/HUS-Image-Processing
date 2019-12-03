@@ -36,6 +36,16 @@ Dropout Layers
 Pooling Layers
 ReLU layers
 vanishing gradient problem
-
-
+Max-Norm
+early stopping
 Amdahl’s Law
+Generalization error
+maxout unit
+Tikhonov regularization := L2 weight regularization
+lasso regularization
+KL-sparsity = KL-divergence = Kullback-Leibler divergence
+Monte-Carlo Model Averaging
+Weight Scaling
+ridge regression
+lasso regression
+permutation invariant := "In this context this refers to the fact that the model does not assume any spatial relationships between the features. E.g. for multilayer perceptron, you can permute the pixels and the performance would be the same. This is not the case for convolutional networks, which assume neighbourhood relations." ==  a model that produces the same output regardless of the order of elements in the input vector
