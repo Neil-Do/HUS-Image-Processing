@@ -29,7 +29,7 @@ function R = erosion(T, W)
   R = zeros(size(T));
   for r = 1+n:rows+n
     for c = 1+n:cols+n
-      if min(T(r-n:r+n, c-n:c+n)(flags) > 0) # StructElement nam trong mien T(p) > 0 voi moi p
+      if min(T(r-n:r+n, c-n:c+n)(flags)) > 0 # StructElement nam trong mien T(p) > 0 voi moi p
 
         # tim gia tri min cho phep erosion tren mien hang xom
         min_value = min((T(r-n:r+n, c-n:c+n) - W)(flags));
