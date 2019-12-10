@@ -43,4 +43,4 @@ G = rgb2gray(im2double(I));
 imshow(G);
 SE = [0, 1, 1, 1, 0; 1, 2, 2, 2, 1; 1, 1, 5, 1, 1; 1, 2, 2, 2, 1; 0, 1, 1, 1, 0];
 R = median(G, SE);
-imshow(R);
+imwrite(R, "Results/Image25Result.jpg");
