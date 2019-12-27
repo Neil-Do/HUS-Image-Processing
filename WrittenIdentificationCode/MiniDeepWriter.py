@@ -6,7 +6,7 @@ __all__ = ['DeepWriter', 'deepwriter']
 
 class DeepWriter(nn.Module):
 
-    def __init__(self, num_classes=10):
+    def __init__(self, num_classes=50):
         super(DeepWriter, self).__init__()
         self.features = nn.Sequential(
             nn.Conv2d(3, 32, kernel_size=5, stride=2),

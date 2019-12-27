@@ -1,0 +1,7 @@
+
+
+Dataset create from sklearn suffle
+# train_dataset2.dat := binary file compress 61100 gray image with 113 x 113 size
+# validation_dataset2.dat := binary file compress 15700 gray image with 113 x 113 size
+# test_dataset2.dat := binary file compress 15700 gray image with 113 x 113 size
+
