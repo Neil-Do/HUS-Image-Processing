@@ -1,0 +1,180 @@
+Half DeepWriter
+
+DeepWriter(
+  (features): Sequential(
+    (0): Conv2d(1, 96, kernel_size=(5, 5), stride=(2, 2))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (3): Conv2d(96, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): ReLU(inplace=True)
+    (5): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (6): Conv2d(256, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (7): ReLU(inplace=True)
+    (8): Conv2d(384, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (9): ReLU(inplace=True)
+    (10): Conv2d(384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(6, 6))
+  (classifier): Sequential(
+    (0): Dropout(p=0.5, inplace=False)
+    (1): Linear(in_features=9216, out_features=1024, bias=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout(p=0.5, inplace=False)
+    (4): Linear(in_features=1024, out_features=1024, bias=True)
+    (5): ReLU(inplace=True)
+    (6): Linear(in_features=1024, out_features=50, bias=True)
+  )
+)
+
+model summary
+
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 96, 55, 55]           2,496
+              ReLU-2           [-1, 96, 55, 55]               0
+         MaxPool2d-3           [-1, 96, 27, 27]               0
+            Conv2d-4          [-1, 256, 27, 27]         221,440
+              ReLU-5          [-1, 256, 27, 27]               0
+         MaxPool2d-6          [-1, 256, 13, 13]               0
+            Conv2d-7          [-1, 384, 13, 13]         885,120
+              ReLU-8          [-1, 384, 13, 13]               0
+            Conv2d-9          [-1, 384, 13, 13]       1,327,488
+             ReLU-10          [-1, 384, 13, 13]               0
+           Conv2d-11          [-1, 256, 13, 13]         884,992
+             ReLU-12          [-1, 256, 13, 13]               0
+        MaxPool2d-13            [-1, 256, 6, 6]               0
+AdaptiveAvgPool2d-14            [-1, 256, 6, 6]               0
+          Dropout-15                 [-1, 9216]               0
+           Linear-16                 [-1, 1024]       9,438,208
+             ReLU-17                 [-1, 1024]               0
+          Dropout-18                 [-1, 1024]               0
+           Linear-19                 [-1, 1024]       1,049,600
+             ReLU-20                 [-1, 1024]               0
+           Linear-21                   [-1, 50]          51,250
+================================================================
+Total params: 13,860,594
+Trainable params: 13,860,594
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.05
+Forward/backward pass size (MB): 11.03
+Params size (MB): 52.87
+Estimated Total Size (MB): 63.96
+----------------------------------------------------------------
+
+
+DeepWriter
+
+
+
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1        [-1, 192, 111, 111]           4,992
+              ReLU-2        [-1, 192, 111, 111]               0
+         MaxPool2d-3          [-1, 192, 55, 55]               0
+            Conv2d-4          [-1, 512, 55, 55]         885,248
+              ReLU-5          [-1, 512, 55, 55]               0
+         MaxPool2d-6          [-1, 512, 27, 27]               0
+            Conv2d-7          [-1, 768, 27, 27]       3,539,712
+              ReLU-8          [-1, 768, 27, 27]               0
+            Conv2d-9          [-1, 768, 27, 27]       5,309,184
+             ReLU-10          [-1, 768, 27, 27]               0
+           Conv2d-11          [-1, 512, 27, 27]       3,539,456
+             ReLU-12          [-1, 512, 27, 27]               0
+        MaxPool2d-13          [-1, 512, 13, 13]               0
+AdaptiveAvgPool2d-14            [-1, 512, 6, 6]               0
+          Dropout-15                [-1, 18432]               0
+           Linear-16                 [-1, 2048]      37,750,784
+             ReLU-17                 [-1, 2048]               0
+          Dropout-18                 [-1, 2048]               0
+           Linear-19                 [-1, 2048]       4,196,352
+             ReLU-20                 [-1, 2048]               0
+           Linear-21                   [-1, 50]         102,450
+================================================================
+Total params: 55,328,178
+Trainable params: 55,328,178
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.19
+Forward/backward pass size (MB): 90.81
+Params size (MB): 211.06
+Estimated Total Size (MB): 302.06
+----------------------------------------------------------------
+
+MiniDeepWriter
+
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 32, 111, 111]             832
+              ReLU-2         [-1, 32, 111, 111]               0
+         MaxPool2d-3           [-1, 32, 55, 55]               0
+            Conv2d-4           [-1, 64, 55, 55]          18,496
+              ReLU-5           [-1, 64, 55, 55]               0
+         MaxPool2d-6           [-1, 64, 27, 27]               0
+            Conv2d-7           [-1, 96, 27, 27]          55,392
+              ReLU-8           [-1, 96, 27, 27]               0
+            Conv2d-9           [-1, 96, 27, 27]          83,040
+             ReLU-10           [-1, 96, 27, 27]               0
+           Conv2d-11           [-1, 64, 27, 27]          55,360
+             ReLU-12           [-1, 64, 27, 27]               0
+        MaxPool2d-13           [-1, 64, 13, 13]               0
+AdaptiveAvgPool2d-14             [-1, 64, 6, 6]               0
+           Linear-15                  [-1, 256]         590,080
+             ReLU-16                  [-1, 256]               0
+           Linear-17                  [-1, 256]          65,792
+             ReLU-18                  [-1, 256]               0
+           Linear-19                   [-1, 50]          12,850
+================================================================
+Total params: 881,842
+Trainable params: 881,842
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.19
+Forward/backward pass size (MB): 13.02
+Params size (MB): 3.36
+Estimated Total Size (MB): 16.58
+----------------------------------------------------------------
+
+Mini Deep with no DropOut
+
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 32, 111, 111]             832
+              ReLU-2         [-1, 32, 111, 111]               0
+         MaxPool2d-3           [-1, 32, 55, 55]               0
+            Conv2d-4           [-1, 64, 55, 55]          18,496
+              ReLU-5           [-1, 64, 55, 55]               0
+         MaxPool2d-6           [-1, 64, 27, 27]               0
+            Conv2d-7           [-1, 96, 27, 27]          55,392
+              ReLU-8           [-1, 96, 27, 27]               0
+            Conv2d-9           [-1, 96, 27, 27]          83,040
+             ReLU-10           [-1, 96, 27, 27]               0
+           Conv2d-11           [-1, 64, 27, 27]          55,360
+             ReLU-12           [-1, 64, 27, 27]               0
+        MaxPool2d-13           [-1, 64, 13, 13]               0
+AdaptiveAvgPool2d-14             [-1, 64, 6, 6]               0
+          Dropout-15                 [-1, 2304]               0
+           Linear-16                  [-1, 256]         590,080
+             ReLU-17                  [-1, 256]               0
+          Dropout-18                  [-1, 256]               0
+           Linear-19                  [-1, 256]          65,792
+             ReLU-20                  [-1, 256]               0
+           Linear-21                   [-1, 50]          12,850
+================================================================
+Total params: 881,842
+Trainable params: 881,842
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.19
+Forward/backward pass size (MB): 13.04
+Params size (MB): 3.36
+Estimated Total Size (MB): 16.60
+----------------------------------------------------------------
+
+

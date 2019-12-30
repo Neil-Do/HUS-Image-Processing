@@ -1,0 +1,15 @@
+# import imageio to open images
+from PIL import Image
+
+# import augmenters from imgaug
+from imgaug import augmenters as iaa
+
+# use imageio library to read the image (alternatively you can use OpenCV cv2.imread() function)
+image = Image.open('image1.jpg')
+
+# initialize the augmenter
+rotate = iaa.Affine(rotate=(-25, 25)) # rotate image
+
+# augment image
+image_rotated = rotate.augment_images([image])[0]
+image.show()
